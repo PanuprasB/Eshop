@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.Controllers.ProductController">
+   <children>
+      <Button fx:id="productAbort" layoutX="23.0" layoutY="352.0" mnemonicParsing="false" onAction="#returnToMain" text="Cancel" />
+      <Button fx:id="productSubmit" layoutX="516.0" layoutY="352.0" mnemonicParsing="false" text="Submit" />
+      <Label fx:id="productAction" layoutX="283.0" layoutY="14.0" text="Action" textAlignment="CENTER" />
+      <Label fx:id="productId" layoutX="38.0" layoutY="66.0" text="Product ID" />
+      <TextField fx:id="productTitle" layoutX="38.0" layoutY="101.0" promptText="Produt Title" />
+      <TextField fx:id="productManufacturer" layoutX="38.0" layoutY="175.0" promptText="product manufacturer" />
+      <TextArea fx:id="productDescription" layoutX="318.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" promptText="product description" />
+      <TextField fx:id="productPrice" layoutX="38.0" layoutY="214.0" promptText="product price" />
+      <TextField fx:id="productStock" layoutX="38.0" layoutY="252.0" promptText="product stock" />
+      <RadioButton fx:id="cigaretteCheckbox" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" text="Cigaretes">
+         <toggleGroup>
+            <ToggleGroup fx:id="category" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="otherCheckbox" layoutX="157.0" layoutY="142.0" mnemonicParsing="false" text="Kita" toggleGroup="$category" />
+      <RadioButton fx:id="heetsCheckbox" layoutX="92.0" layoutY="142.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" text="Heets" toggleGroup="$category" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.VBox?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kursinis.Controllers.MainShopUserController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="produtsTab" text="Products">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="214.0" prefWidth="374.0">
+                     <children>
+                        <ListView fx:id="produtsList" layoutX="14.0" layoutY="14.0" prefHeight="304.0" prefWidth="174.0" />
+                         <AnchorPane fx:id="singleProduct" layoutX="201.0" layoutY="10.0" prefHeight="306.0" prefWidth="400.0">
+                             <children>
+                                 <ImageView fx:id="productImage" fitHeight="95.0" fitWidth="156.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+                                 <TextArea fx:id="productDescription" editable="false" layoutX="2.0" layoutY="127.0" prefHeight="79.0" prefWidth="163.0" promptText="description" />
+                                 <Label fx:id="productName" layoutX="177.0" prefHeight="17.0" prefWidth="190.0" text="Poduct name" />
+                                 <Label fx:id="attribute1" layoutX="179.0" layoutY="21.0" text="attribute1" />
+                                 <Label fx:id="attribute2" layoutX="179.0" layoutY="48.0" text="attribute2" />
+                                 <Label fx:id="attribute3" layoutX="179.0" layoutY="76.0" text="attribute3" />
+                                 <Label fx:id="attribute4" layoutX="179.0" layoutY="100.0" text="attribute 4" />
+                                 <ScrollPane fx:id="commentScrollPane" layoutY="209.0" prefHeight="144.0" prefWidth="390.0">
+                                     <content>
+                                         <VBox fx:id="commentVBox" prefHeight="90000.0" prefWidth="374.0" />
+                                     </content></ScrollPane>
+                                 <Label fx:id="productId" layoutX="2.0" prefHeight="17.0" prefWidth="78.0" text="Product Id" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="addToCart" layoutX="258.0" layoutY="175.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="26.0" prefWidth="87.0" text="Add to cart" />
+                              <TextField fx:id="productAmountField" layoutX="214.0" layoutY="175.0" prefHeight="25.0" prefWidth="34.0" />
+                             </children>
+                         </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="cartTab" text="Cart">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="cartList" layoutX="14.0" layoutY="14.0" prefHeight="304.0" prefWidth="257.0" />
+                        <Button fx:id="removeFromCart" layoutX="113.0" layoutY="332.0" mnemonicParsing="false" onAction="#removeFromCart" text="Remove" />
+                        <Button fx:id="createOrder" layoutX="459.0" layoutY="332.0" mnemonicParsing="false" onAction="#createOrder" prefHeight="26.0" prefWidth="57.0" text="Order" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Settings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="orderHistoryTab" onSelectionChanged="#populateOrderHistoryList" text="OrderHistory">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="orderHistoryList" layoutX="14.0" layoutY="14.0" prefHeight="306.0" prefWidth="454.0" />
+                        <Button fx:id="orderInfo" layoutX="215.0" layoutY="320.0" mnemonicParsing="false" onAction="#orderInfo" prefHeight="31.0" prefWidth="72.0" text="Info" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
